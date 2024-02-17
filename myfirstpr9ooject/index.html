@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/3ad088cc23.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="musicplayer">
+        <!-- Music player -->
+        <nav>
+          <div class="circles">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="circles">
+            <i class="fa-solid fa-bars"> </i>
+          </div>
+        </nav>
+        <img
+          src="sardarji-joke-humour-hindi-film-png-favpng-SjAaehagc157CVG37ytnYqvCU_t.webp"
+          class="image"
+        />
+        <div class="songdetails">
+          <h1 id="artistname">RAJAT</h1>
+          <p id="songname">JATT DI CLIP</p>
+        </div>
+        <div class="a">
+            <audio   id="song">
+                <!-- just remove controls aki site me wo na dikha -->
+                <source src="Jatt_Di_Clip_1.mp3" >
+            </audio>
+           </div>
+        <input type="range" id="progress"/>
+        <div class="circle">
+          <div><i class="fa-solid fa-backward" id="fast"></i></div>
+          <div onclick="playpause()">
+<i class="fa-solid fa-play" id="play"></i>
+          </div>
+          <div><i class="fa-solid fa-forward" id="backk"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js">
+    </script>
+  </body>
+</html>

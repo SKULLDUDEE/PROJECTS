@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="list" draggable="true">
+                LIST ITEM 1
+
+            </div>
+            <div class="list" draggable="true">
+                LIST ITEM 2
+
+            </div>
+            <div class="list" draggable="true">
+                LIST ITEM 3
+
+            </div>
+            <div class="list" draggable="true">
+                LIST ITEM 4
+
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+    <!-- <div class="container">
+        <div class="leftbox">
+          <div class="list draggable" draggable="true">Item 1</div>
+          <div class="list draggable" draggable="true">Item 2</div>
+        </div>
+        <div class="rightbox">
+          <h2>Drop items here</h2>
+        </div>
+      </div> -->
+    <script>
+        let a = document.querySelectorAll(".draggable");
+        let rightbox = document.getElementsByClassName("right");
+        let leftbox = document.getElementsByClassName("left");
+        // we have to add a functionn to drag and drop
+        for(list of a ){
+            list.addEventListener("dragstart",function(e){
+                e.dataTransfer.setData("text/plain", e.target.id);
+                // when we will start dragging we wwill get element and store that in b 
+            })
+            rightbox.addEventListener("dragover",function(e){
+                e.preventDefault();
+            })
+            rightbox.addEventListener("drop",function(e) {
+                const draggedId = e.dataTransfer.getData("text/plain");
+                const draggedElement = document.getElementById(draggedId);
+
+                rightBox.appendChild(draggedElement);
+                // it will add the selected element to right boxx 
+            })
+        }
+
+//         const draggableItems = document.querySelectorAll(".draggable");
+// const rightBox = document.querySelector(".rightbox");
+
+// draggableItems.forEach((item) => {
+//   item.addEventListener("dragstart", (event) => {
+//     event.dataTransfer.setData("text/plain", event.target.id);
+//   });
+// });
+
+// rightBox.addEventListener("dragover", (event) => {
+//   event.preventDefault();
+// });
+
+// rightBox.addEventListener("drop", (event) => {
+//   const draggedId = event.dataTransfer.getData("text/plain");
+//   const draggedElement = document.getElementById(draggedId);
+
+//   rightBox.appendChild(draggedElement);
+// });
+    </script>
+   
+</body>
+</html>
